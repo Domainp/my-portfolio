@@ -1,2 +1,2 @@
 /var/log/syslog
-Note: /opt/alpha and hidden /var/tmp items not found in this session.
+/home/domain/maze/level_42/flag.txt
