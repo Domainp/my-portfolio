@@ -1,2 +1,39 @@
 172.16.0.22
 192.168.1.10
+# 🛡️ Forensic Incident Report: TLAB-01
+**Date:** March 12, 2026  
+**Analyst:** domain  
+**Status:** CRITICAL - MALWARE DETECTED  
+
+---
+
+## 📝 Executive Summary
+During a routine audit of `/var/tmp/.evidence_cache`, a sabotaged log file was discovered. Forensic analysis confirmed a persistent attack utilizing a custom botnet signature. Access was initially restricted by the attacker via filesystem permission manipulation (set to 000).
+
+---
+
+## 🔍 Forensic Methodology (The Holy Trinity)
+To extract the actionable intelligence below, the following command-line pipeline was utilized:
+`grep "CRITICAL" | sed 's/MalwareBot//g' | awk '{print $1}' | sort | uniq`
+
+1. **Isolation:** Filtered raw logs for `CRITICAL` severity level.
+2. **Sanitization:** Utilized `sed` to strip malware-specific UserAgents.
+3. **Extraction:** Isolated attacker source IPs.
+4. **Deduplication:** Collapsed repeating attacks into unique threat actors.
+
+---
+
+## 🚨 Isolated Threat Actors (Unique IPs)
+The following IP addresses have been identified as sources of the SQL Injection and Data Exfiltration attempts:
+
+| Attacker IP Address | Threat Type | Signature detected |
+| :--- | :--- | :--- |
+| 192.168.1.10 | SQL Injection | UNION SELECT |
+| 172.16.0.22 | Port Scan | Malignant Scanning |
+
+---
+
+## 🛡️ Recommended Mitigation Steps
+1. **Firewall Block:** Immediately blacklist the identified IPs at the edge firewall.
+2. **Access Control:** Audit all `/tmp` and `/var/tmp` directories for similar hidden `.evidence` caches.
+3. **Hardening:** Implement `AIDE` or `Tripwire` to detect unauthorized file permission changes in real-time.
