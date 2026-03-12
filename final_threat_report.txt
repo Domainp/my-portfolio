@@ -1,5 +1,4 @@
-172.16.0.22
-192.168.1.10
+
 # 🛡️ Forensic Incident Report: TLAB-01
 **Date:** March 12, 2026  
 **Analyst:** domain  
