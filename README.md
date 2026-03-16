@@ -39,3 +39,8 @@ In `packet_analysis.txt`, I documented the relationship between client and serve
 
 ## Key Takeaway
 By analyzing the raw data movement, I have strengthened my ability to troubleshoot end-user connectivity issues. This lab proves that a solid understanding of networking fundamentals is essential for high-level IT Support and Security analysis.
+
+## Why This Matters for IT Support
+IT Support is the backbone of any organization, and understanding packet-level data is key to rapid resolution. By monitoring the SYN/ACK sequence, I can identify **TCP Retransmission** issues. 
+
+For example, if I capture a **SYN** packet but no corresponding **SYN/ACK**, I can immediately conclude that the issue is likely a firewall blocking the port or a downed server service. This allows me to resolve end-user tickets faster by accurately isolating the failure within the specific layer of the **OSI Model**, preventing unnecessary troubleshooting on the client-side.
