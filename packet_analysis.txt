@@ -1,0 +1,13 @@
+S04 Forensic Analysis: TCP Handshake
+Captured Interface: Ethernet 7
+
+1. SYN Packet (Client -> Server)
+   - Raw Sequence Number: [Paste your first number here]
+
+2. SYN/ACK Packet (Server -> Client)
+   - Raw Sequence Number: [Server's ISN]
+   - Raw Acknowledgment Number: [Paste your second number here]
+
+3. Forensic Validation:
+   The Acknowledgment Number matches (SYN Sequence + 1), 
+   confirming a valid forensic capture of the TCP 3-way handshake.
