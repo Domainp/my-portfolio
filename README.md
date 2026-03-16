@@ -18,3 +18,24 @@ The following critical system paths were identified and logged in `discovery.txt
 * Ubuntu Linux
 * Bash Shell
 * Git & GitHub
+# Session 04: Forensic Analysis of TCP 3-Way Handshake
+
+## Project Overview
+In this lab, I conducted a deep-dive forensic analysis of the TCP 3-way handshake using Wireshark and Linux command-line tools. Understanding how data moves at the packet level is the backbone of effective IT support and network troubleshooting.
+
+## Skills Demonstrated
+* **Packet Capture & Filtering:** Utilized Wireshark display filters (`tcp.flags.syn == 1`) to isolate connection attempts.
+* **Forensic Logic:** Analyzed Raw Sequence (SEQ) and Acknowledgment (ACK) numbers to verify protocol integrity.
+* **Linux Scripting:** Debugged and repaired infrastructure audit scripts (`lab_verify.sh`) to ensure operational compliance.
+* **Version Control:** Managed project artifacts using Git and GitHub.
+
+## Forensic Breakdown
+In `packet_analysis.txt`, I documented the relationship between client and server sequence numbers:
+1. **SYN:** Client sends Initial Sequence Number (ISN).
+2. **SYN/ACK:** Server acknowledges by returning $ISN + 1$.
+3. **ACK:** Client completes the handshake.
+
+
+
+## Key Takeaway
+By analyzing the raw data movement, I have strengthened my ability to troubleshoot end-user connectivity issues. This lab proves that a solid understanding of networking fundamentals is essential for high-level IT Support and Security analysis.
